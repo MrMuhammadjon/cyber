@@ -33,6 +33,10 @@ const Header = () => {
       {
         responsive ? (
           <header>
+            <div className={`py-3 px-2 ${DarkMode ? 'bg-gray-800': 'bg-white'}`}>
+              <h1 className={`${DarkMode ? 'text-white' : 'text-black'}`}>Cyber</h1>
+            </div>
+
             <div className={`fixed bottom-0 left-0 w-full shadow-md py-3 flex justify-around md:hidden z-50 border-t-1 ${DarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               {MobileHead.map((item) => (
                 <Link
@@ -40,8 +44,7 @@ const Header = () => {
                   to={item.Link}
                   className={`flex flex-col items-center gap-1 text-sm transition duration-300`}
                 >
-                  <box-icon name={item.icon} size="m" className={`transform transition duration-300 hover:-translate-y-1  ${DarkMode ? 'text-white hover:text-blue-500' : 'text-white hover:text-yellow-400'
-                    }`}></box-icon>
+                  <box-icon name={item.icon} size="m" color={`${DarkMode ? 'white' : 'black'}`} className={`transform transition duration-300 hover:-translate-y-1`}></box-icon>
                 </Link>
               ))}
             </div>
