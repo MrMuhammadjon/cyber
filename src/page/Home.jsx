@@ -1,9 +1,10 @@
 import React from 'react'
+import HomeBanner from '../components/PageComponents/HomeBanner'
 
 const Home = () => {
   return (
     <div>
-      Home
+      <HomeBanner/>
     </div>
   )
 }

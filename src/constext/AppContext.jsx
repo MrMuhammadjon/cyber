@@ -17,7 +17,7 @@ export const AppContextProvider = ({ children }) => {
     useEffect(() => {
         const Mode = DarkMode ? 'dark-mode' : 'light-mode';
         document.body.className = Mode
-        localStorage.setItem('teme', DarkMode ? 'dark' : 'light');
+        localStorage.setItem('theme', DarkMode ? 'dark' : 'light');
     }, [DarkMode])
 
 

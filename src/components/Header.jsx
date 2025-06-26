@@ -33,8 +33,11 @@ const Header = () => {
       {
         responsive ? (
           <header>
-            <div className={`py-3 px-2 ${DarkMode ? 'bg-gray-800': 'bg-white'}`}>
-              <h1 className={`${DarkMode ? 'text-white' : 'text-black'}`}>Cyber</h1>
+            <div className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 shadow-md py-3 px-4 ${DarkMode ? 'bg-gray-800' : 'bg-white'
+                } ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
+              <Link to='/'>
+                <h1 className={`${DarkMode ? 'text-white' : 'text-black'} text-3xl`}>Cyber</h1>
+              </Link>
             </div>
 
             <div className={`fixed bottom-0 left-0 w-full shadow-md py-3 flex justify-around md:hidden z-50 border-t-1 ${DarkMode ? 'bg-gray-800' : 'bg-white'}`}>
@@ -56,7 +59,7 @@ const Header = () => {
                 } ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
             >
               <div className="max-w-[1400px] w-[90%] mx-auto px-4 py-5 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-                <div className="flex flex-1 items-center justify-start w-full md:w-auto">
+                <div className="flex flex-1 md:flex-[2] lg:flex-1 items-center justify-start w-full md:w-auto">
                   <h1 className={`text-xl font-bold ${DarkMode ? 'text-white' : 'text-black'}`}>Cyber</h1>
                   <form className="hidden md:block ml-4 w-[80%]">
                     <div className={`h-full w-[100%] flex items-center justify-center gap-1.5 p-1 rounded-sm px-3 ${DarkMode ? 'bg-white' : 'bg-gray-300'}`}>
@@ -71,7 +74,7 @@ const Header = () => {
                 </div>
 
                 <div className="flex flex-[1.5] xl:flex-[1] flex-col md:flex-row md:items-center gap-4 h-full w-full md:w-auto justify-end items-center">
-                  <ul className="flex gap-6 flex-wrap justify-center">
+                  <ul className="flex gap-6 flex-wrap justify-center md:hidden lg:flex">
                     {headElements.map((item) => (
                       <li key={item.id}>
                         <Link
