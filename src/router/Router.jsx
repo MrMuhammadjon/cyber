@@ -11,6 +11,7 @@ import ProductDetails from '../page/pageComponents/ProductDetslis';
 import ErrorPage from '../page/ErrorPage';
 import Profil from '../page/Profil';
 import ProtectedRoute from '../components/ProtectedRoute';
+import Wishes from '../page/Wishes'
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             { path: 'blog', element: <Blog /> },
             { path: 'contacts', element: <Contacts /> },
             { path: 'products/:id', element: <ProductDetails /> },
+            { path: 'wishes', element: <Wishes/>},
             {
                 path: 'profile',
                 element: (

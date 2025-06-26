@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
+    <div className="h-[1400px]">
       Footer
     </div>
   )
