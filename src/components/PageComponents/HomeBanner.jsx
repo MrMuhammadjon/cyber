@@ -1,10 +1,10 @@
 import React from 'react'
-import HeadIphoneimg from '../../assets/img/iPhone.png'
+import HeadIphoneimg from '../../assets/iphone14promax.png'
 
 const HomeBanner = () => {
     return (
         <>
-            <section className="w-full bg-[#211C24] text-white pt-16">
+            <section className="w-full bg-[#211C24] text-white pt-16 z-10">
                 <div className="w-[90%] max-w-[1400px] h-[500px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
 
                     <div className="flex-1 space-y-6 text-center lg:text-left z-10">
@@ -20,11 +20,11 @@ const HomeBanner = () => {
                         </button>
                     </div>
 
-                    <div className="flex-1 flex items-center justify-center w-full h-[100%] overflow-hidden absolute md:relative z-0">
+                    <div className="flex-1 flex items-center justify-center w-full h-[100%] overflow-hidden absolute -translate-y-45 lg:translate-y-0 transitiom-[0.3s] lg:relative">
                         <img
                             src={HeadIphoneimg}
                             alt="iPhone 14"
-                            className="w-[500px] drop-shadow-2xl transition-transform duration-500 hover:scale-105 md:mt-200 mt-140 hover:-rotate-5"
+                            className="w-[300px] drop-shadow-2xl transition-transform duration-500 hover:scale-105 md:mt-200 md:w-[500px] mt-140 hover:-rotate-5"
                         />
                     </div>
 
