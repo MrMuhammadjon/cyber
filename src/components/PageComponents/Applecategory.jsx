@@ -1,5 +1,5 @@
 import React from 'react'
-import macbook from '../../assets/MacBook Pro 14.png'
+import macbook from '../../assets/MacBook.png'
 import AirPods from '../../assets/airbods.png'
 import palystation from '../../assets/palystation.png'
 import applvision from '../../assets/applevision.png'
@@ -8,9 +8,9 @@ import applvision from '../../assets/applevision.png'
 const Applecategory = () => {
     return (
         <div className="bg-gray-100 relative z-20 w-[100%]">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 w-[100%]">
+            <div className="mx-auto grid grid-cols-1 md:grid-cols-2 w-[100%] max-w-[1400px]">
 
-                <div className="grid grid-rows-2">
+                <div className="grid grid-rows-2 w-full">
                     <div className="relative h-[250px] group overflow-hidden">
                         <img
                             src={palystation}
@@ -56,7 +56,7 @@ const Applecategory = () => {
                     <img
                         src={macbook}
                         alt="Macbook Air"
-                        className="h-[90%] object-cover rounded transition-transform duration-300 group-hover:scale-105 absolute right-0 translate-x-20  group-hover:-translate-x-0"
+                        className="h-[100%] object-cover rounded transition-transform duration-800 group-hover:scale-105 absolute right-0 translate-x-90  group-hover:-translate-x-90"
                     />
 
                     {/* Overlay content */}
@@ -66,7 +66,7 @@ const Applecategory = () => {
                         <p className="text-sm text-gray-700 group-hover:text-gray-200 max-w-md">
                             The new 15-inch MacBook Air makes room for more with a spacious Retina display.
                         </p>
-                        <button className="border border-black px-4 py-2 mt-4 rounded hover:bg-black hover:text-white transition-colors">
+                        <button className="border border-black group-hover:border-white px-4 py-2 mt-4 rounded hover:bg-black group-hover:text-white transition-colors">
                             Shop Now
                         </button>
                     </div>

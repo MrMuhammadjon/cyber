@@ -4,8 +4,8 @@ import axios from 'axios';
 export const fetchProducts = createAsyncThunk(
   'products/fetch',
   async () => {
-    const response = await axios.get('https://dummyjson.com/products');
-    return response.data.products; 
+    const response = await axios.get('https://dummyjson.com/products/search?q=phone');
+    return response.data.products;
   }
 );
 
@@ -30,5 +30,7 @@ const productSlice = createSlice({
       });
   }
 });
+
+
 
 export default productSlice.reducer;

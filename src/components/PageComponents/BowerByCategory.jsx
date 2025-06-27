@@ -21,7 +21,7 @@ const BowerByCategory = () => {
     };
 
     return (
-        <div className={`py-10  w-full flex items-center justify-center ${DarkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+        <div className={`py-10  w-full flex items-center justify-center ${DarkMode ? 'bg-gray-900' : 'bg-white'}`}>
             <div className="container mx-auto px-4 w-[90%] max-w-[1400px]">
                 <div className="flex items-center justify-between mb-4">
                     <h2 className={`text-xl font-semibold ${DarkMode ? 'text-white' : 'text-black'}`}>Browse By Category</h2>
