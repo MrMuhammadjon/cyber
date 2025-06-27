@@ -7,8 +7,8 @@ import applvision from '../../assets/applevision.png'
 
 const Applecategory = () => {
     return (
-        <div className="bg-gray-100 h-[500px] relative z-20">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2">
+        <div className="bg-gray-100 relative z-20 w-[100%]">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 w-[100%]">
 
                 <div className="grid grid-rows-2">
                     <div className="relative h-[250px] group overflow-hidden">

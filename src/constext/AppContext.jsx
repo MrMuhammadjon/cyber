@@ -8,6 +8,8 @@ export const AppContextProvider = ({ children }) => {
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [responsive, setResponsive] = useState(window.innerWidth <= 768);
+    const [favorites, setFavorites] = useState([]);
+    const [cart, setCart] = useState([]);
 
 
     const [DarkMode, setDarkMode] = useState(() => {
@@ -47,14 +49,45 @@ export const AppContextProvider = ({ children }) => {
 
         window.addEventListener('resize', handleResize);
 
-        // Dastlab bir marta tekshirib olish uchun chaqiramiz
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        const savedFavs = JSON.parse(localStorage.getItem('favorites')) || [];
+        const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        setFavorites(savedFavs);
+        setCart(savedCart);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }, [favorites]);
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+        const handleFavoriteClick = (productId) => {
+        setFavorites((prevFavs) =>
+            prevFavs.includes(productId)
+                ? prevFavs.filter((id) => id !== productId)
+                : [...prevFavs, productId]
+        );
+    };
+
+    const handleAddToCart = (product) => {
+        setCart((prevCart) => {
+            const exists = prevCart.find((item) => item.id === product.id);
+            if (exists) return prevCart; 
+            return [...prevCart, product];
+        });
+    };
+
+
     const ContextValue = {
-        user, setUser, DarkMode, setDarkMode, showHeader, setShowHeader, responsive, setResponsive
+        user, setUser, DarkMode, setDarkMode, showHeader, setShowHeader, responsive, setResponsive, favorites, setFavorites, cart, setCart, handleFavoriteClick, handleAddToCart
     }
 
 
